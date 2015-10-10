@@ -13,10 +13,18 @@ body
 {    
     background: black;
 }
+
+#containerTop
+{
+    width: 100%;
+    position: relative;
+    left: 5px;
+    margin-bottom: 138px;
+}
 #containerBottom
 {
     width: 100%;
-    bottom: 10px;
+    bottom: 0px;
     position: fixed;
 }
 
@@ -28,11 +36,47 @@ body
     
 }
 
+#popup-menu-container
+{
+    margin: 0 auto;
+    width: 800px;
+    text-align: center;
+}
+
+#itemsMenu
+{
+    display: inline-block;
+    
+}
+
+#itemsMenu ul
+{
+    padding: 0px;
+}
+
+#itemsMenu ul li
+{
+    list-style: none;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#itemsMenu ul li a
+{
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+
+#itemsMenu ul li a:hover
+{
+    color: yellow;
+}
+
 #outercontent
 {
     margin: 0 auto;
     width: 800px;
-    height: 600px;
     overflow: hidden;
     top: 10px;
 }
@@ -43,7 +87,7 @@ body
     height: 100%;
     //background-color: green;    
     overflow: auto;
-    padding-right: 17px;
+    //padding-right: 17px;
 }
 
 .frame
@@ -58,8 +102,18 @@ body
 
 .frame-text
 {
-    padding-left: 20px;
-    padding-right: 20px;
+    
+}
+.frame-text p
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.frame-text h1
+{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #avatar
@@ -82,6 +136,7 @@ body
 {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-button a:hover
@@ -89,7 +144,32 @@ body
     color: yellow;
 }
 
-.postText
+.post
+{
+    margin-bottom: 20px;
+}
+
+.post-text
 {
     
+}
+
+.reblogTootPortait
+{
+    float: left;
+    margin-right: 20px;
+}
+
+.frame-text-title-reblog
+{
+    min-height: 96px;
+}
+
+.reblogged-from
+{
+    float: left;
+}
+.note-count
+{
+    text-align: right;
 }

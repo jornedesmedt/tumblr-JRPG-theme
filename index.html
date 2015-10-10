@@ -14,17 +14,20 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         
         <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <body>
         
-        <div id="containerTop">
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="MainCtrl">
+        
+        <div id="containerTop" ng-click="clickNowhere()">
             
             <div id="outercontent">
                 <div id="content">
                     
-                    <div class="postText">
+                    <div class="post post-text">
                         
-                        <div class="frame frame-text">
+                        <div class="frame frame-text frame-text-title-reblog">
+                            <img class="reblogTootPortait" src="http://38.media.tumblr.com/avatar_1a4a0031dda7_96.png" />
                             <h1>Text post</h1>                           
                             
                         </div>
@@ -34,16 +37,79 @@ and open the template in the editor.
                         </div>
                         
                         <div class="frame frame-text">                            
-                            <p>Reblogged from someone</p>
-                            <p>Source: some-shit-poster</p>
+                            <p class="reblogged-from">Reblogged from someone</p><p class="note-count">{NoteCountWithLabel}</p>                            
                         </div>
                     </div>
-                </div>
                     
+                    <div class="post post-text">
+                        
+                        <div class="frame frame-text frame-text-title-reblog">
+                            <img class="reblogTootPortait" src="http://38.media.tumblr.com/avatar_1a4a0031dda7_96.png" />
+                            <h1>Text post</h1>                           
+                            
+                        </div>
+                        <div class="frame frame-text">
+                            <p>This is the placeholder content for a text post. How does it feel to be in a JRPG? I bet you never thought this would ever happen on tumblr. It's amazing, isn't it? I felt like making a theme and here it is. This actually got me the idea to try making an Undertale theme, but I'm gonna try to finish this one first. In case you're wondering about which font I'm using, it's VT232, from the Google Fonts. So what do you think?</p>
+                            
+                        </div>
+                        
+                        <div class="frame frame-text">                            
+                            <p class="reblogged-from">Reblogged from someone</p><p class="note-count">{NoteCountWithLabel}</p>                            
+                        </div>
+                    </div>
+                    
+                    <div class="post post-text">
+                        
+                        <div class="frame frame-text frame-text-title-reblog">
+                            <img class="reblogTootPortait" src="http://38.media.tumblr.com/avatar_1a4a0031dda7_96.png" />
+                            <h1>Text post</h1>                           
+                            
+                        </div>
+                        <div class="frame frame-text">
+                            <p>This is the placeholder content for a text post. How does it feel to be in a JRPG? I bet you never thought this would ever happen on tumblr. It's amazing, isn't it? I felt like making a theme and here it is. This actually got me the idea to try making an Undertale theme, but I'm gonna try to finish this one first. In case you're wondering about which font I'm using, it's VT232, from the Google Fonts. So what do you think?</p>
+                            
+                        </div>
+                        
+                        <div class="frame frame-text">                            
+                            <p class="reblogged-from">Reblogged from someone</p><p class="note-count">{NoteCountWithLabel}</p>                            
+                        </div>
+                    </div>
+                    
+                    <div class="post post-text">
+                        
+                        <div class="frame frame-text frame-text-title-reblog">
+                            <img class="reblogTootPortait" src="http://38.media.tumblr.com/avatar_1a4a0031dda7_96.png" />
+                            <h1>Text post</h1>                           
+                            
+                        </div>
+                        <div class="frame frame-text">
+                            <p>This is the placeholder content for a text post. How does it feel to be in a JRPG? I bet you never thought this would ever happen on tumblr. It's amazing, isn't it? I felt like making a theme and here it is. This actually got me the idea to try making an Undertale theme, but I'm gonna try to finish this one first. In case you're wondering about which font I'm using, it's VT232, from the Google Fonts. So what do you think?</p>
+                            
+                        </div>
+                        
+                        <div class="frame frame-text">                            
+                            <p class="reblogged-from">Reblogged from someone</p><p class="note-count">{NoteCountWithLabel}</p>                            
+                        </div>
+                    </div>
+                    
+                </div>
             </div> 
         </div>
         
         <div id="containerBottom">
+            
+            <div id="popup-menu-container">
+                <div id="itemsMenu" class="frame frame-text" ng-show="showItemMenu">
+                    <ul>
+                        <li><a href=".">Link 1</a></li>
+                        <li><a href=".">Link 2</a></li>
+                        <li><a href=".">Link 3</a></li>
+                        <li><a href=".">Link 4</a></li>
+                        <li><a href=".">Link 5</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div id="bottombar" class="frame">
                 
                 <img id="avatar" src="http://38.media.tumblr.com/avatar_1a4a0031dda7_128.png" />
@@ -52,7 +118,7 @@ and open the template in the editor.
                     <table>
                         <tr>
                             <td class="nav-button"><a href="/ask">{AskLabel}</a></td>
-                            <td class="nav-button"><a>Items</a></td>
+                            <td class="nav-button"><a ng-click="toggleItemMenu()">Items</a></td>
                         </tr>
                         <tr>
                             <td class="nav-button"><a href="/submit">{SubmitLabel}</a></td>
